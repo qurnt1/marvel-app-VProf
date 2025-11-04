@@ -1,16 +1,19 @@
-#root {
-  width: 100%;
-  margin: 0;
-  padding: 2rem;
-  text-align: center;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+/* Importation des polices Google Fonts (impactantes et lisibles) */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* ----- Variables de couleur Marvel ----- */
+:root {
+  --marvel-red: #ED1D24; /* Le rouge officiel de Marvel */
+  --marvel-black: #111111; /* Un noir profond */
+  --marvel-white: #FFFFFF;
+  --marvel-grey: #444444; /* Un gris foncé pour les bordures */
 }
 
+/* ----- Réglages de base du corps ----- */
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif; /* Police lisible pour le corps */
+  background-color: var(--marvel-black); /* Fond noir/très sombre */
+  color: var(--marvel-white); /* Texte blanc par défaut */
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -19,14 +22,30 @@ body {
   flex-direction: column;
 }
 
-h1 {
+#root {
+  width: 100%;
   margin: 0;
-  padding: 20px;
-  background: #333;
-  color: #fff;
-  text-align: center;
+  padding: 2rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* On enlève text-align: center pour laisser le contenu s'aligner naturellement */
 }
 
+/* ----- Titre principal (style "Logo Bar") ----- */
+h1 {
+  margin: 0;
+  padding: 15px 20px;
+  background: var(--marvel-red);
+  color: var(--marvel-white);
+  text-align: center;
+  font-family: 'Oswald', sans-serif; /* Police impactante */
+  text-transform: uppercase; /* Toujours en majuscules */
+  letter-spacing: 1.5px; /* Pour un look "cinéma" */
+}
+
+/* ----- Listes de contenu (ex: liste de héros) ----- */
 ul {
   list-style: none;
   margin: 0;
@@ -34,19 +53,28 @@ ul {
 }
 
 li {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--marvel-grey); /* Bordure plus subtile sur fond noir */
 }
 
 li a {
-    color: #333;
-    text-decoration: none;
+  color: var(--marvel-white); /* Liens en blanc */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-/* Navigation */
+li a:hover {
+  color: var(--marvel-red); /* Au survol, le lien devient rouge */
+}
+
+/* ----- Navigation principale ----- */
 nav {
-  background: #444;
-  padding: 10px;
+  background: #000000; /* Noir pur pour la nav */
+  padding: 10px 0;
+  /* Petite ombre ou bordure pour séparer du header */
+  border-bottom: 3px solid var(--marvel-red);
 }
 
 nav ul {
@@ -56,32 +84,42 @@ nav ul {
 }
 
 nav li {
-  margin: 0 15px;
+  margin: 0 10px;
+  padding: 0; /* On enlève le padding du li... */
+  border-bottom: none; /* Annule la bordure générale des li */
 }
 
 nav a {
-  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  color: var(--marvel-white);
   text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 15px; /* ...pour le mettre sur le <a> */
+  border-radius: 4px; /* Coins légèrement arrondis */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: var(--marvel-red); /* Fond rouge au survol */
+  color: var(--marvel-white);
+  text-decoration: none; /* Pas de soulignement */
 }
 
+/* Style pour le lien "actif" */
 nav a.active {
-  color: salmon;
+  background-color: var(--marvel-red);
+  color: var(--marvel-white);
+  font-weight: bold;
 }
 
+/* ----- Pied de page ----- */
 footer {
   margin: 0;
   padding: 20px;
-  background: #333;
-  color: #fff;
+  background: #000000; /* Noir pur, comme la nav */
+  color: #AAAAAA; /* Couleur de texte plus discrète */
   text-align: center;
-  margin-top: auto;
-}
-
-li a {
-  color: #333;
-  text-decoration: none;
+  margin-top: auto; /* Colle le footer en bas */
+  border-top: 3px solid var(--marvel-red); /* Rappel du rouge */
+  font-size: 0.9rem;
 }
