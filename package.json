@@ -1,7 +1,7 @@
 {
   "name": "marvel-app-2025",
   "private": true,
-  "version": "0.3.1",
+  "version": "1.0.0.rc1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -30,6 +30,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "@testing-library/user-event": "^14.6.1",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -38,6 +39,7 @@
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
     "jest-fixed-jsdom": "^0.0.10",
+    "jest-sonar-reporter": "^2.0.0",
     "vite": "^7.0.4"
   }
 }
