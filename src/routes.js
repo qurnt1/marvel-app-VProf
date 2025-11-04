@@ -32,7 +32,7 @@ const routes = [
           path: "/characters/:id",
           Component: CharacterDetailPage,
           loader: ({ params }) => {
-            return getCharacterById(params.id);
+            return { character: getCharacterById(params.id) };
           }
       },
       {
